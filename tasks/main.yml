@@ -1,0 +1,11 @@
+- include: RedHat.yml
+  when: ansible_os_family == "RedHat"
+
+- include: Debian.yml
+  when: ansible_os_family == "Debian"
+
+- name: configures logdna api key
+  command: /usr/bin/logdna-agent -k {{ logdna_api_key }}
+
+- name: configures logdna to startup
+  service: name=logdna-agent state=started enabled=yes

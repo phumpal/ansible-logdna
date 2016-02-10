@@ -1,0 +1,5 @@
+[logdna]
+name=LogDNA packages
+baseurl=http://repo.logdna.com/el6/
+enabled=1
+gpgcheck=0

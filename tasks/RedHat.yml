@@ -1,0 +1,10 @@
+- name: configures logdna yum repository
+  copy:
+    src: logdna.repo
+    dest: /etc/yum.repos.d/logdna.repo
+    owner: root
+    group: root
+    mode: 0644
+
+- name: installs logdna
+  yum: name=logdna-agent state=latest

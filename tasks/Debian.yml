@@ -1,0 +1,5 @@
+- name: adds logdna apt repository
+  apt_repository: repo='deb http://repo.logdna.com stable main'
+
+- name: installs logdna
+  apt: pkg=logdna-agent update_cache=true force=yes
